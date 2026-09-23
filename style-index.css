@@ -12,10 +12,12 @@
 
 body {
     /*Representa o corpo da página inteira.  */
-    background-color: rgba(125, 105, 105, 0.29);
+    background-color: rgba(7, 0, 0, 0.918);
     /* Pinta o fundo da sua página inteira com um tom de cinza bem clarinho (quase branco). */
 }
-
+nav{
+    background-color: rgb(69, 126, 239);
+}
 h1 {
     text-align: center;
     /* Centraliza o texto horizontalmente */
@@ -32,12 +34,15 @@ h1 {
     margin-bottom: 20px;
     /* Espaço abaixo do título. */
     font-size: 28px;
+    color: white;
+   
 }
 
 @media (max-width:768px) {
     h1 {
         font-size: 28px;
         /* No celular o título fica um pouco menor. */
+        color: white;
     }
 }
 
@@ -45,10 +50,13 @@ h3 {
     padding-top: 10px;
     margin: 10px;
     font-size: 20px;
+    color: white;
+    
 }
 
 h4 {
-    margin: 10px
+    margin: 10px;
+    color: white;
 }
 
 p {
@@ -57,6 +65,7 @@ p {
     /* Assim como no main, aplicar isso aos parágrafos garante que nenhum texto flutue acidentalmente para o lado do menu ou de imagens flutuantes.
     Ele obriga o texto a sempre iniciar em uma linha limpa abaixo dos elementos anteriores. */
     margin: 15px;
+    color: white;
 }
 
 iframe {
@@ -166,7 +175,7 @@ main {
 
 .subtitulo {
     /* Classe criada para estilizar subtítulos da página. */
-    color: rgb(21, 20, 20);
+    color: white;
     /* Serve para mudar a cor do subtitulo que definir */
     margin: 10px;
     /* Cria um espaço externo ao redor do subtítulo. */
@@ -181,6 +190,7 @@ footer {
     text-align: center;
     margin: 20px;
     /* Cria um espaçamento de 20px em cima e embaixo, deixando o rodapé mais centralizado.*/
+    color: white;
 }
 
 table>caption {
@@ -199,8 +209,9 @@ img {
     /* Nunca deixa a imagem ser maior que a tela.. */
     height: auto;
     /* Mantém a proporção da imagem. */
-    margin: 10px;
+    margin: 0px auto;
     /* Adiciona um espaço externo ao redor da imagem. */
+    
 }
 
 ul {
