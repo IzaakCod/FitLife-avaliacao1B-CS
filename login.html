@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cadastro de Usuário</title>
-    <link rel="stylesheet" href="style-index.css">
+    <link rel="stylesheet" href="style.css">
 
 </head>
 
@@ -74,17 +74,22 @@
 
             <label class="titulo" for="obs">Observações:</label>
             <textarea name="observacoes" id="obs" rows="4" cols="30"></textarea><br>
+            
+            <label><b>Calcule seu IMC:</b></label>
 
-            <div style="margin-bottom: 15px;">
+            <div style="margin-bottom: 15px; margin-top: 10px;">
                 <label class="titulo" for="peso">Peso (Kg):</label>
                 <input type="number" id="peso" name="peso" min="0" placeholder="Ex: 15.50Kg">
             </div>
 
             <label class="titulo" for="altura" ;>Altura (cm):</label>
             <input type="number" id="altura" name="altura" min="0" placeholder="Ex: 1.80cm">
-
-            <input type="submit" value="Cadastrar Usuário" style="margin-top: 20px; border-radius: 10px; 
-            padding: 10px 15px;">
+            
+            <input id="imc" type="submit" value="Calcular imc" style="margin-top: 5px; 
+            border-radius: 10px; padding: 10px 15px; display: block;">
+            
+            <input type="submit" value="Cadastrar Usuário" style="margin-top: 20px; 
+            border-radius: 10px; padding: 10px 15px; display: block;">
         </form>
     </main>
 
