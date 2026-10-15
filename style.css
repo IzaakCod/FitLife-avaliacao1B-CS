@@ -1,0 +1,406 @@
+﻿* {
+    /* O Seletor Universal, Este Ã© o seletor universal.
+     O que vocÃª coloca aqui afeta todos os elementos da pÃ¡gina de uma vez */
+    margin: 0px;
+    /* margin: 0px; e padding: 0px;: Eles "zeram" o espaÃ§amento padrÃ£o que os navegadores colocam automaticamente nos elementos.
+                  Isso Ã© chamado de Reset CSS e serve para vocÃª ter controle total do layout. */
+    padding: 0px;
+    font-family: Arial, Helvetica, sans-serif;
+    /* font-family: Arial, Helvetica, sans-serif;:
+     Define a fonte principal do site. Se o computador nÃ£o tiver Arial, tenta Helvetica, e assim por diante. */
+}
+
+body {
+    /*Representa o corpo da pÃ¡gina inteira.  */
+    background-color: rgba(7, 0, 0, 0.918);
+    /* Pinta o fundo da sua pÃ¡gina inteira com um tom de cinza bem clarinho (quase branco). */
+}
+nav{
+    background-color: rgb(69, 126, 239);
+}
+h1 {
+    text-align: center;
+    /* Centraliza o texto horizontalmente */
+    clear: both;
+    /* Diz para o tÃ­tulo (h1) e para o formulÃ¡rio (form) que eles nÃ£o podem ficar do lado de nenhum outro elemento (como o seu menu azul).
+    Eles sÃ£o obrigados a "limpar" o espaÃ§o e comeÃ§ar na prÃ³xima linha disponÃ­vel abaixo dele. */
+    display: block;
+    padding-top: 10px;
+    /*Serve para dar um respiro visual, assim o texto "Cadastro de UsuÃ¡rio" nÃ£o fica tÃ£o colado no menu quando descer! */
+    text-align: center;
+    /*Centraliza o texto.  */
+    margin-top: 20px;
+    /* EspaÃ§o acima do tÃ­tulo. */
+    margin-bottom: 20px;
+    /* EspaÃ§o abaixo do tÃ­tulo. */
+    font-size: 28px;
+    color: white;
+   
+}
+
+@media (max-width:768px) {
+    h1 {
+        font-size: 28px;
+        /* No celular o tÃ­tulo fica um pouco menor. */
+        color: white;
+    }
+}
+
+h3 {
+    padding-top: 10px;
+    margin: 10px;
+    font-size: 20px;
+    color: white;
+    
+}
+
+h4 {
+    margin: 10px;
+    color: white;
+}
+
+p {
+    /* (ParÃ¡grafos de texto) */
+    clear: both;
+    /* Assim como no main, aplicar isso aos parÃ¡grafos garante que nenhum texto flutue acidentalmente para o lado do menu ou de imagens flutuantes.
+    Ele obriga o texto a sempre iniciar em uma linha limpa abaixo dos elementos anteriores. */
+    margin: 15px;
+    color: white;
+}
+
+iframe {
+    /* (Seu vÃ­deo do YouTube) */
+    display: block;
+    /* Ao mudar para display block, o iframe passa a exigir uma linha inteira sÃ³ para ele, forÃ§ando uma quebra de linha antes e depois.
+    Isso impede que qualquer texto ou nome fique colado na lateral do vÃ­deo. */
+    max-width: 100%;
+    /* Garante que nÃ£o vaze da tela do dispositivo que estÃ¡ sendo visto */
+    margin: 20px auto;
+    /* Adiciona um espaÃ§o em cima e embaixo do vÃ­deo, mantendo as laterais zeradas */
+}
+
+main {
+    /* (O contÃªiner principal da pÃ¡gina) */
+    clear: both;
+    /* Esta Ã© a regra mÃ¡gica que empurrou o conteÃºdo para baixo do menu. Se o seu menu estiver usando tÃ©cnicas como float: left ou float: right,
+    os elementos que vÃªm depois tendem a subir e preencher o espaÃ§o vazio ao lado dele. O clear: both diz ao navegador: "ignore os espaÃ§os ao lado, vÃ¡ para debaixo de qualquer elemento flutuante anterior". */
+    display: block;
+    /* Garante que o contÃªiner principal aja como um bloco estrutural sÃ³lido. */
+    width: 100%;
+    /* Faz com que a Ã¡rea principal ocupe toda a largura da tela. */
+}
+
+.menulist {
+    list-style: none;
+
+    display: flex;
+    /* Coloca todos os itens lado a lado */
+
+    justify-content: flex-start;
+    /* Alinha os itens Ã  esquerda */
+
+    flex-wrap: wrap;
+    /* Se faltar espaÃ§o, permite quebrar a linha */
+}
+
+.menuitem {
+    /* .menuitem: SÃ£o os itens individuais do menu (geralmente tags <li>). */
+    position: relative;
+    /* Deixa o item posicionado de forma "relativa". Isso Ã© essencial para que o submenu saiba de onde ele deve "nascer" quando for ativado. */
+    background-color: rgb(69, 126, 239)
+        /* Define a cor principal dos botÃµes do seu menu. Esse cÃ³digo RGB (Red, Green, Blue) gera aquele tom de azul vibrante. */
+}
+
+.menuitem a {
+    /* .menuitem a: SÃ£o os links clicÃ¡veis dentro do menu. */
+    display: block;
+    /* Faz com que todo o espaÃ§o em volta da palavra tambÃ©m seja clicÃ¡vel, transformando o link em um "bloco" ou "botÃ£o". */
+    color: white;
+    /* Deixa a letra do link branca. */
+    text-decoration: none;
+    /* Tira aquele sublinhado chato que todo link HTML tem por padrÃ£o. */
+    padding: 15px 20px
+        /* Cria o "recheio" do botÃ£o. DÃ¡ 15 pixels de espaÃ§o em cima/embaixo e 20 pixels nas laterais da palavra. */
+}
+
+.menuitem a:hover {
+    /* Efeitos de Mouse (:hover) */
+    /* .menuitem a:hover: O :hover Ã© acionado quando o usuÃ¡rio passa o mouse por cima. Aqui, ele muda a cor de fundo do link para um azul mais claro. */
+    background-color: rgb(135, 155, 196);
+    /* Define a cor que o botÃ£o vai ficar quando o mouse passar por cima. Esse cÃ³digo RGB gera um azul mais claro e acinzentado,
+     criando aquele efeito visual de que o botÃ£o estÃ¡ sendo selecionado ou iluminado. */
+}
+
+.dropcontent {
+    /* O Submenu / Dropdown (.dropcontent) */
+    /* .dropcontent: Ã‰ a caixa que guarda os links secundÃ¡rios (que ficam escondidos). */
+    position: absolute;
+    /* Faz essa caixa "flutuar" na tela, descolada do resto do conteÃºdo, para nÃ£o empurrar os textos para baixo quando aparecer. */
+    display: none;
+    /* Esconde o submenu. Ele nÃ£o vai aparecer na tela atÃ© receber uma ordem contrÃ¡ria. */
+    top: 100%;
+    /* top: 100%; e left: 0;: Dizem para o submenu aparecer exatamente grudado na parte de baixo (100%) e alinhado Ã  esquerda (0) do menu principal. */
+    left: 0;
+    min-width: 160px;
+    /* Garante uma largura mÃ­nima para os textos do submenu nÃ£o ficarem espremidos. */
+    background-color: rgb(69, 126, 239);
+    /* Define a cor de fundo da caixa do submenu (a que fica escondida e aparece ao passar o mouse).
+     Note que Ã© exatamente o mesmo azul do .menuitem. Isso serve para manter a consistÃªncia visual, fazendo com que o submenu pareÃ§a uma extensÃ£o natural do menu principal.*/
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, .2);
+    /* Cria um efeito de sombra (em tom preto com 20% de transparÃªncia) para dar a ilusÃ£o de que o submenu estÃ¡ saltando da tela. */
+}
+
+.dropcontent a {
+    /* .dropcontent a: Estiliza os links de dentro do submenu. Funciona igual aos links do menu principal, mas com um padding ligeiramente menor (12px 16px). */
+    display: block;
+    color: white;
+    text-decoration: none;
+    padding: 12px 16px;
+}
+
+.menulist>.menuitem>a:hover {
+    /* .menulist > .menuitem > a:hover: O sinal de maior > significa filho direto. Isso garante que o efeito de mudar de cor ao passar o mouse aconteÃ§a apenas no link principal,
+     nÃ£o interferindo acidentalmente em outros links que estejam mais "profundos" no cÃ³digo. */
+    background-color: rgb(135, 155, 196);
+    /* Esta regra faz exatamente a mesma coisa que o .menuitem a:hover (muda para o azul mais claro ao passar o mouse). 
+    A diferenÃ§a aqui Ã© a especificidade. O uso dos sinais de maior > (que significam "filho direto") garante que esse fundo azul claro seja aplicado apenas aos links da barra principal.
+     Isso evita que a regra afete acidentalmente os links que estÃ£o dentro do submenu (jÃ¡ que eles tambÃ©m sÃ£o tags a dentro de um .menuitem). */
+}
+
+.menuitem:hover>.dropcontent {
+    /* .menuitem:hover > .dropcontent: Esta Ã© a regra principal do submenu! Ela diz ao navegador: "Quando o mouse passar por cima do item do menu (:hover), pegue o submenu (.dropcontent)
+     que estÃ¡ dentro dele e mude seu estilo para display: block;". Ã‰ isso que faz o submenu aparecer do nada (saindo do display: none para block). */
+    display: block;
+}
+
+.subtitulo {
+    /* Classe criada para estilizar subtÃ­tulos da pÃ¡gina. */
+    color: white;
+    /* Serve para mudar a cor do subtitulo que definir */
+    margin: 10px;
+    /* Cria um espaÃ§o externo ao redor do subtÃ­tulo. */
+    padding-top: 10px;
+    /* Adiciona um pequeno espaÃ§o interno acima do texto,
+       afastando-o do elemento anterior. */
+}
+
+footer {
+    /* RodapÃ© da pÃ¡gina. Ã‰ a Ã¡rea onde ficam informaÃ§Ãµes finais do site, como autor,
+       direitos autorais e links para contato. */
+    text-align: center;
+    margin: 20px;
+    /* Cria um espaÃ§amento de 20px em cima e embaixo, deixando o rodapÃ© mais centralizado.*/
+    color: white;
+}
+
+table>caption {
+    /* Seleciona apenas o tÃ­tulo (caption) que Ã© filho direto da tabela (table). */
+    margin: 10px;
+    /* Adiciona um pequeno espaÃ§o ao redor do tÃ­tulo da tabela,
+       evitando que ele fique colado nela. */
+}
+
+img {
+    /* Estiliza todas as imagens da pÃ¡gina. */
+    display: block;
+    /* Faz a imagem ocupar uma linha inteira,
+       evitando que fique ao lado de outros elementos. */
+    max-width: 100%;
+    /* Nunca deixa a imagem ser maior que a tela.. */
+    height: auto;
+    /* MantÃ©m a proporÃ§Ã£o da imagem. */
+    margin: 0px auto;
+    /* Adiciona um espaÃ§o externo ao redor da imagem. */
+    
+}
+
+ul {
+    list-style-type: disc;
+    /* ForÃ§a o navegador a mostrar as bolinhas padrÃ£o */
+    padding-left: 20px;
+    /* DÃ¡ o espaÃ§o necessÃ¡rio na esquerda para que elas apareÃ§am na tela */
+    margin-bottom: 5px;
+    /* Aproveita para afastar a lista do conteÃºdo de baixo */
+}
+
+/* 1. Estilizando a prÃ³pria tabela */
+table {
+    margin: 20px auto;
+    /* EspaÃ§amento externo da tabela e centralizaÃ§Ã£o. */
+    width: 95%;
+    /* Ela ocuparÃ¡ toda a largura disponÃ­vel. */
+    border: 2px solid black;
+    /* Cria a borda externa da tabela */
+    max-width: 900px;
+    /* Nunca fica gigantesca. */
+}
+
+.tabela {
+
+    overflow-x: auto;
+
+}
+
+/* 2. Estilizando as cÃ©lulas */
+th,
+td {
+    border: 1px solid black;
+    /* Cria as bordas das cÃ©lulas */
+    padding: 10px;
+    /* EspaÃ§o interno entre o texto e a borda. */
+}
+
+/* 3. Remove as bordas duplicadas */
+th,
+td {
+    border-top: none;
+    /* Remove a borda superior das cÃ©lulas. */
+    border-left: none;
+    /* Remove a borda esquerda das cÃ©lulas. */
+}
+
+th:first-child,
+td:first-child {
+    border-left: none;
+    /* Garante que a primeira coluna nÃ£o tenha borda Ã  esquerda. */
+}
+
+tr:first-child th {
+    border-top: none;
+    /* Garante que a primeira linha da tabela nÃ£o tenha borda superior. */
+}
+
+/* 4. Destaca a linha quando o mouse passa */
+tbody tr:hover {
+    background-color: rgb(217, 234, 250);
+    /* Muda a cor da linha quando o usuÃ¡rio passa o mouse,
+       facilitando a visualizaÃ§Ã£o da informaÃ§Ã£o. */
+}
+
+/* 1. Estilizando o tÃ­tulo da tabela */
+caption {
+    font-size: 25px;
+    /* Tamanho da letra */
+    font-weight: bold;
+    /* Deixa em negrito */
+    padding: 5px;
+    /* EspaÃ§amento interno */
+    text-align: center;
+    /* Centraliza o texto */
+}
+
+form {
+    /* (O formulÃ¡rio da pÃ¡gina) */
+    clear: both;
+    /* Assim como usamos no main e no h1, essa regra diz ao formulÃ¡rio para ignorar qualquer elemento flutuante (como os itens do menu que usam float: left)
+    e pular para a prÃ³xima linha limpa. Isso garante que o formulÃ¡rio fique perfeitamente alinhado abaixo do menu, e nÃ£o espremido do lado dele. */
+    display: block;
+    width: 90%;
+    /* largura do formulÃ¡rio */
+    max-width: 450px;
+    margin: 20px auto;
+    /* centraliza o formulÃ¡rio */
+    padding: 20px;
+    /* espaÃ§o interno */
+    border: 2px solid #4b7bec;
+    /* borda azul */
+    border-radius: 25px;
+    /* cantos arredondados */
+    background-color: #f8fbff;
+    /* fundo bem claro */
+}
+
+.titulo {
+    font-weight: bold;
+    /* Deixa os nomes em negrito. */
+}
+
+.titulo-genero {
+    display: block;
+    /* Transforma o label em um bloco.
+    Assim ele ocupa a linha inteira. Sem isso, ele fica como texto comum. */
+    font-weight: bold;
+    margin-bottom: 15px;
+    /* Cria um espaÃ§o entre  GÃªnero: e Masculino â—‹ */
+}
+
+.radio-group {
+    margin-bottom: 20px;
+    /* Serve apenas para dar um espaÃ§o entre o grupo dos rÃ¡dios e o prÃ³ximo campo (Senha) */
+}
+
+.radio-label {
+    display: block;
+    /* Cada opÃ§Ã£o fica em uma linha. */
+    font-weight: normal;
+    /* Tira o negrito. SÃ³ o "GÃªnero:" continua em negrito. */
+    margin-bottom: -5px;
+    /* DÃ¡ um espacinho entre uma opÃ§Ã£o e outra. */
+}
+
+/* Campos de texto do formulÃ¡rio */
+input[type="text"],
+input[type="tel"],
+input[type="email"],
+input[type="date"],
+input[type="password"],
+textarea {
+    width: 95%;
+    /* ocupa quase toda a largura */
+    padding: 8px;
+    /* aumenta a altura */
+    margin-top: 5px;
+    /* espaÃ§o acima */
+    margin-bottom: 12px;
+    /* espaÃ§o abaixo */
+}
+
+input[type="radio"] {
+    width: auto;
+    /* O navegador escolhe a largura normal da bolinha. */
+    margin-right: 6px;
+    /* Cria um pequeno espaÃ§o entre a bolinha e a palavra. */
+}
+
+input[type="submit"] {
+    background-color: #4b7bec;
+    /* Cor do botÃ£o. */
+    color: white;
+    /* Cor do texto. */
+    border: none;
+    /* Remove a borda padrÃ£o. */
+    padding: 10px;
+    /* Aumenta o tamanho do botÃ£o. */
+    cursor: pointer;
+    /* Quando passa o mouse aparece a "mÃ£ozinha". */
+}
+
+input[type="submit"]:hover {
+    background-color: #3b65c7;
+    /* Quando o usuÃ¡rio passa o mouse, o botÃ£o muda um pouco de cor. */
+}
+
+@media (max-width:768px) {
+
+    .menulist {
+
+        flex-direction: column;
+        /* Coloca os itens um abaixo do outro */
+
+    }
+
+    .menuitem {
+
+        width: 100%;
+        /* Cada botÃ£o ocupa toda a largura */
+
+    }
+
+    .dropcontent {
+
+        position: static;
+        /* O submenu acompanha o fluxo normal */
+
+    }
+
+} 
