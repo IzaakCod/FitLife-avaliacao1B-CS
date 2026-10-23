@@ -34,7 +34,7 @@
         <h1>Cadastro de Usuário</h1>
     </header>
     <main>
-        <form action="https://www.w3schools.com/action_page.php" method="POST">
+        <form onsubmit="alert('Foi!')">
 
             <input type="hidden" name="id" value="10">
 
@@ -79,16 +79,16 @@
 
             <div style="margin-bottom: 15px; margin-top: 10px;">
                 <label class="titulo" for="peso">Peso (Kg):</label>
-                <input type="number" id="peso" name="peso"  placeholder="Ex: 15.50Kg">
+                <input type="text" id="peso" name="peso"  placeholder="Ex: 15.50Kg">
             </div>
 
             <label class="titulo" for="altura" ;>Altura (cm):</label>
-            <input type="number" id="altura" name="altura"  placeholder="Ex: 1.80cm">
+            <input type="text" id="altura" name="altura"  placeholder="Ex: 1.80cm">
             
-            <input id="imc" type="submit" value="Calcular imc" style="margin-top: 5px; 
-            border-radius: 10px; padding: 10px 15px; display: block;">
+            <button type="button" style="margin-top: 5px; 
+            border-radius: 10px; padding: 10px 15px; display: block;" onclick="calcularIMC()">Calcular imc</button>
 
-            <p id="resultado"></p>
+            <p id="resultado" style="color: black;"></p>
             
             <input type="submit" value="Cadastrar Usuário" style="margin-top: 20px; 
             border-radius: 10px; padding: 10px 15px; display: block;">
@@ -99,6 +99,8 @@
         Criado e desenvolvido por Izaak &copy; 2026 -
         <a href="https://izaaksantos.com.br" target="_blank">IzaakSantos.com.br</a>
     </footer>
+
+    <script src="imc.js"></script>
 </body>
 
 </html>

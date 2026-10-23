@@ -1,4 +1,5 @@
-function calcularIMC(peso, altura) {
+function calcularIMC() {
+
     let peso = document.getElementById('peso').value.replace(',', '.');
     let altura = document.getElementById('altura').value.replace(',', '.');
 
@@ -7,21 +8,21 @@ function calcularIMC(peso, altura) {
     let imc = peso / (altura ** 2)
     
     if (imc < 18.5) {
-        resultado.innerHTML =  "Abaixo do peso"
+        resultado.innerHTML =  `O seu IMC é ${imc.toFixed(2)} e você está Abaixo do peso.`
     }
     if (imc >= 18.5) {
-        resultado.innerHTML =  "Peso normal"
+        resultado.innerHTML =  `O seu IMC é ${imc.toFixed(2)} e você está com Peso normal.`
     }
     if (imc >= 24.9) {
-        resultado.innerHTML =  "Sobrepeso"
+        resultado.innerHTML =  `O seu IMC é ${imc.toFixed(2)} e você está com Sobrepeso.`
     }
     if (imc >= 29.9) {
-        resultado.innerHTML =  "Obesidade grau 1"
+        resultado.innerHTML =  `O seu IMC é ${imc.toFixed(2)} e você está com Obesidade grau 1.`
     }
     if (imc >= 34.9) {
-        resultado.innerHTML =  "Obesidade grau 2"
+        resultado.innerHTML =  `O seu IMC é ${imc.toFixed(2)} e você está com Obesidade grau 2.`
     }
     if (imc >= 39.9) {
-        resultado.innerHTML =  "Obesidade grau 2"
+        resultado.innerHTML =  ` O seu IMC é ${imc.toFixed(2)} e você está com Obesidade grau 2.`
     }
 }
