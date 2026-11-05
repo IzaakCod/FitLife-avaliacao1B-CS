@@ -82,10 +82,10 @@ Durante o desenvolvimento deste projeto, busquei desenvolver e aprimorar conheci
   Desenvolvedor em formação | Front-end
   <br /><br />
   <a href="https://github.com/IzaakCod">
-    <img src="https://img.shields.io/badge/GitHub-IzaakCod-181717?style=for-the-badge&logo=github" />
+    <img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github" />
   </a>
   <a href="https://linkedin.com/in/izaak-nascimento-78678040a">
-    <img src="https://img.shields.io/badge/LinkedIn-Izaak%20Nascimento-0A66C2?style=for-the-badge&logo=linkedin" />
+    <img src="https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin" />
   </a>
 </p>
 
