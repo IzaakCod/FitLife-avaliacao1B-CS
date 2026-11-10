@@ -12,8 +12,7 @@
 
 body {
     /*Representa o corpo da página inteira.  */
-    background-color: rgba(1, 1, 5, 0.789);
-    /* Pinta o fundo da sua página inteira com um tom de cinza bem clarinho (quase branco). */
+    background-color: #123B4A;    /* Pinta o fundo da sua página inteira com um azul petróleo escuro */
     font-family: Arial, Helvetica, sans-serif;
     
 }
@@ -178,6 +177,11 @@ main {
     display: block;
 }
 
+.menuitem:focus-within > .dropcontent {
+    /* Faz O submenu aparece quando o mouse passa sobre “Contato”, mas também deve abrir quando alguém navega até ele usando Tab */
+    display: block;
+}
+
 .subtitulo {
     /* Classe criada para estilizar subtítulos da página. */
     color: white;
@@ -235,7 +239,7 @@ table {
     /* Espaçamento externo da tabela e centralização. */
     width: 95%;
     /* Ela ocupará toda a largura disponível. */
-    border: 2px solid black;
+    border: 2px solid #7DD3FC;
     /* Cria a borda externa da tabela */
     max-width: 900px;
     /* Nunca fica gigantesca. */
@@ -251,7 +255,7 @@ table {
 /* 2. Estilizando as células */
 th,
 td {
-    border: 1px solid black;
+    border: 2px solid black;
     /* Cria as bordas das células */
     padding: 10px;
     /* Espaço interno entre o texto e a borda. */
