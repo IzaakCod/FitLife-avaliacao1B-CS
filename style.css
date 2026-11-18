@@ -1,3 +1,13 @@
+:root {
+    --cor-fundo: #123b4adf;
+    --cor-menu: rgb(69, 126, 239);
+    --cor-menu-hover: rgba(0, 0, 0, 0.826);
+    --cor-destaque: #7DD3FC;
+    --cor-acao: #4b7bec;
+    --cor-acao-hover: #3b65c7;
+    --cor-formulario: #f8fbff;
+}
+
 * {
     /* O Seletor Universal, Este é o seletor universal.
      O que você coloca aqui afeta todos os elementos da página de uma vez */
@@ -5,6 +15,7 @@
     /* margin: 0px; e padding: 0px;: Eles "zeram" o espaçamento padrão que os navegadores colocam automaticamente nos elementos.
                   Isso é chamado de Reset CSS e serve para você ter controle total do layout. */
     padding: 0px;
+    box-sizing: border-box;
     font-family: Arial, Helvetica, sans-serif;
     /* font-family: Arial, Helvetica, sans-serif;:
      Define a fonte principal do site. Se o computador não tiver Arial, tenta Helvetica, e assim por diante. */
@@ -12,13 +23,16 @@
 
 body {
     /*Representa o corpo da página inteira.  */
-    background-color: #123B4A;    /* Pinta o fundo da sua página inteira com um azul petróleo escuro */
+    background-color: var(--cor-fundo);
+    /* Pinta o fundo da sua página inteira com um azul petróleo escuro */
     font-family: Arial, Helvetica, sans-serif;
-    
+
 }
-nav{
-    background-color: rgb(69, 126, 239);
+
+nav {
+    background-color: var(--cor-menu);
 }
+
 h1 {
     text-align: center;
     /* Centraliza o texto horizontalmente */
@@ -36,8 +50,8 @@ h1 {
     /* Espaço abaixo do título. */
     font-size: 28px;
     color: white;
-    
-   
+
+
 }
 
 @media (max-width:768px) {
@@ -53,7 +67,7 @@ h3 {
     margin: 10px;
     font-size: 20px;
     color: white;
-    
+
 }
 
 h4 {
@@ -94,6 +108,8 @@ main {
 
 .menulist {
     list-style: none;
+    padding: 0;
+    margin: 0;
 
     display: flex;
     /* Coloca todos os itens lado a lado */
@@ -109,12 +125,13 @@ main {
     /* .menuitem: São os itens individuais do menu (geralmente tags <li>). */
     position: relative;
     /* Deixa o item posicionado de forma "relativa". Isso é essencial para que o submenu saiba de onde ele deve "nascer" quando for ativado. */
-    background-color: rgb(69, 126, 239);
+    background-color: var(--cor-menu);
     /* Define a cor principal dos botões do seu menu. Esse código RGB (Red, Green, Blue) gera aquele tom de azul vibrante. */
-    
+
 }
 
-.menuitem a {
+.menuitem a,
+.menuitem>.contact-menu>summary {
     /* .menuitem a: São os links clicáveis dentro do menu. */
     display: block;
     /* Faz com que todo o espaço em volta da palavra também seja clicável, transformando o link em um "bloco" ou "botão". */
@@ -122,16 +139,41 @@ main {
     /* Deixa a letra do link branca. */
     text-decoration: none;
     /* Tira aquele sublinhado chato que todo link HTML tem por padrão. */
-    padding: 15px 20px
-        /* Cria o "recheio" do botão. Dá 15 pixels de espaço em cima/embaixo e 20 pixels nas laterais da palavra. */
+    padding: 15px 20px;
+    /* Cria o "recheio" do botão. Dá 15 pixels de espaço em cima/embaixo e 20 pixels nas laterais da palavra. */
 }
 
-.menuitem a:hover {
+.menuitem a:hover,
+.menuitem>.contact-menu>summary:hover {
     /* Efeitos de Mouse (:hover) */
     /* .menuitem a:hover: O :hover é acionado quando o usuário passa o mouse por cima. Aqui, ele muda a cor de fundo do link para um azul mais claro. */
-    background-color:  rgba(0, 0, 0, 0.826)
+    background-color: var(--cor-menu-hover);
     /* Define a cor que o botão vai ficar quando o mouse passar por cima. Esse código RGB gera um azul mais claro e acinzentado,
      criando aquele efeito visual de que o botão está sendo selecionado ou iluminado. */
+}
+
+.contact-menu>summary {
+    cursor: pointer;
+    list-style: none;
+}
+
+.contact-menu>summary::-webkit-details-marker {
+    display: none;
+}
+
+.contact-menu[open]>.dropcontent {
+    display: block;
+}
+
+.menuitem>a[aria-current="page"] {
+    background-color: var(--cor-menu-hover);
+    box-shadow: inset 0 -3px 0 var(--cor-destaque);
+}
+
+.menuitem a:focus-visible,
+.contact-menu>summary:focus-visible {
+    outline: 3px solid var(--cor-destaque);
+    outline-offset: -3px;
 }
 
 .dropcontent {
@@ -146,7 +188,7 @@ main {
     left: 0;
     min-width: 160px;
     /* Garante uma largura mínima para os textos do submenu não ficarem espremidos. */
-    background-color: rgb(69, 126, 239);
+    background-color: var(--cor-menu);
     /* Define a cor de fundo da caixa do submenu (a que fica escondida e aparece ao passar o mouse).
      Note que é exatamente o mesmo azul do .menuitem. Isso serve para manter a consistência visual, fazendo com que o submenu pareça uma extensão natural do menu principal.*/
     box-shadow: 0px 8px 16px rgba(0, 0, 0, .2);
@@ -159,27 +201,7 @@ main {
     color: white;
     text-decoration: none;
     padding: 12px 16px;
-    
-}
 
-.menulist>.menuitem>a:hover {
-    /* .menulist > .menuitem > a:hover: O sinal de maior > significa filho direto. Isso garante que o efeito de mudar de cor ao passar o mouse aconteça apenas no link principal,
-     não interferindo acidentalmente em outros links que estejam mais "profundos" no código. */
-    background-color: rgba(0, 0, 0, 0.826);
-    /* Esta regra faz exatamente a mesma coisa que o .menuitem a:hover (muda para o azul mais claro ao passar o mouse). 
-    A diferença aqui é a especificidade. O uso dos sinais de maior > (que significam "filho direto") garante que esse fundo azul claro seja aplicado apenas aos links da barra principal.
-     Isso evita que a regra afete acidentalmente os links que estão dentro do submenu (já que eles também são tags a dentro de um .menuitem). */
-}
-
-.menuitem:hover>.dropcontent {
-    /* .menuitem:hover > .dropcontent: Esta é a regra principal do submenu! Ela diz ao navegador: "Quando o mouse passar por cima do item do menu (:hover), pegue o submenu (.dropcontent)
-     que está dentro dele e mude seu estilo para display: block;". É isso que faz o submenu aparecer do nada (saindo do display: none para block). */
-    display: block;
-}
-
-.menuitem:focus-within > .dropcontent {
-    /* Faz O submenu aparece quando o mouse passa sobre “Contato”, mas também deve abrir quando alguém navega até ele usando Tab */
-    display: block;
 }
 
 .subtitulo {
@@ -220,7 +242,7 @@ img {
     /* Mantém a proporção da imagem. */
     margin: 0px auto;
     /* Adiciona um espaço externo ao redor da imagem. */
-    
+
 }
 
 ul {
@@ -239,7 +261,7 @@ table {
     /* Espaçamento externo da tabela e centralização. */
     width: 95%;
     /* Ela ocupará toda a largura disponível. */
-    border: 2px solid #7DD3FC;
+    border: 2px solid var(--cor-destaque);
     /* Cria a borda externa da tabela */
     max-width: 900px;
     /* Nunca fica gigantesca. */
@@ -313,11 +335,11 @@ form {
     /* centraliza o formulário */
     padding: 20px;
     /* espaço interno */
-    border: 2px solid #4b7bec;
+    border: 2px solid var(--cor-acao);
     /* borda azul */
     border-radius: 25px;
     /* cantos arredondados */
-    background-color: #f8fbff;
+    background-color: var(--cor-formulario);
     /* fundo bem claro */
 }
 
@@ -350,6 +372,34 @@ form {
 }
 
 /* Campos de texto do formulário */
+.campo-imc {
+    margin: 12px 0;
+}
+
+.botao-imc {
+    margin-top: 5px;
+    border: 0;
+    border-radius: 10px;
+    padding: 10px 15px;
+    background-color: var(--cor-acao);
+    color: white;
+    cursor: pointer;
+}
+
+.botao-imc:hover {
+    background-color: var(--cor-acao-hover);
+}
+
+.botao-cadastro {
+    margin-top: 20px;
+    border-radius: 10px;
+}
+
+.resultado-imc,
+.mensagem-cadastro {
+    color: #123B4A;
+}
+
 input[type="text"],
 input[type="tel"],
 input[type="email"],
@@ -374,7 +424,7 @@ input[type="radio"] {
 }
 
 input[type="submit"] {
-    background-color: #4b7bec;
+    background-color: var(--cor-acao);
     /* Cor do botão. */
     color: white;
     /* Cor do texto. */
@@ -387,7 +437,7 @@ input[type="submit"] {
 }
 
 input[type="submit"]:hover {
-    background-color: #3b65c7;
+    background-color: var(--cor-acao-hover);
     /* Quando o usuário passa o mouse, o botão muda um pouco de cor. */
 }
 

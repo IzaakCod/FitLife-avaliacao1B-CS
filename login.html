@@ -13,30 +13,32 @@
     <header>
         <nav>
             <ul class="menulist ">
-                <li class="menuitem"><a href="index.html" class="active">🏠 Início</a></li>
-                <li class="menuitem"><a href="treinos.html" class="active" aria-current="page">🏋️ Treinos</a></li>
-                <li class="menuitem"><a href="alimentacao.html" class="active" aria-current="page">🥗 Receitas Fit</a></li>
+                <li class="menuitem"><a href="index.html">🏠 Início</a></li>
+                <li class="menuitem"><a href="treinos.html">🏋️ Treinos</a></li>
+                <li class="menuitem"><a href="alimentacao.html">🥗 Receitas Fit</a></li>
                 <li class="menuitem"><a href="login.html" class="active" aria-current="page">👤 Cadastro</a></li>
                 <li class="menuitem">
-                    <a href="#" class="dropbutton">📧 Contato</a>
-                    <div class="dropcontent">
-                        <a href="https://github.com/" target="_blank">📂 Github</a>
-                        <a href="https://www.linkedin.com/in/izaak-nascimento-78678040a" target="_blank">💼 Linkedin</a>
-                        <a href="https://www.instagram.com/izaaksntts?igsh=MWZxOWgxNDcxbGVwMA%3D%3D" target="_blank">📷
-                            Instagram</a>
-                        <!--O que faz o mailto:?
-                            Quando o usuário clicar em E-mail, o computador ou celular tenta abrir o programa de e-mail já com o destinatário preenchido.-->
-                        <a href="https://mail.google.com/mail/?view=cm&to=zaaknascimentosantos@gmail.com" target="_blank"> ✉️ E-mail</a>
-                    </div>
+                    <details class="contact-menu">
+                        <summary class="dropbutton">📧 Contato</summary>
+                        <div class="dropcontent">
+                            <a href="https://github.com/IzaakCod" target="_blank" rel="noopener noreferrer">📂
+                                Github</a>
+                            <a href="https://www.linkedin.com/in/izaak-nascimento-78678040a" target="_blank"
+                                rel="noopener noreferrer">💼 Linkedin</a>
+                            <a href="https://www.instagram.com/izaaksntts?igsh=MWZxOWgxNDcxbGVwMA%3D%3D" target="_blank"
+                                rel="noopener noreferrer">📷
+                                Instagram</a>
+                            <a href="https://mail.google.com/mail/?view=cm&amp;to=zaaknascimentosantos@gmail.com"
+                                target="_blank" rel="noopener noreferrer"> ✉️ E-mail</a>
+                        </div>
+                    </details>
                 </li>
             </ul>
         </nav>
         <h1>Cadastro de Usuário</h1>
     </header>
     <main>
-        <form onsubmit="alert('Foi!')">
-
-            <input type="hidden" name="id" value="10">
+        <form id="formCadastro" method="post">
 
             <label class="titulo" for="nome">Nome:</label>
             <input type="text" id="nome" name="nome" minlength="5" maxlength="15" required=""><br>
@@ -74,24 +76,25 @@
 
             <label class="titulo" for="obs">Observações:</label>
             <textarea name="observacoes" id="obs" rows="4" cols="30"></textarea><br>
-            
+
             <label><b>Calcule seu IMC:</b></label>
 
-            <div style="margin-bottom: 15px; margin-top: 10px;">
-                <label class="titulo" for="peso">Peso (Kg):</label>
-                <input type="text" id="peso" name="peso"  placeholder="Ex: 15.50Kg">
+            <div class="campo-imc">
+                <label class="titulo" for="peso">Peso (kg):</label>
+                <input type="text" id="peso" name="peso" inputmode="decimal" placeholder="Ex.: 70,5">
             </div>
 
-            <label class="titulo" for="altura" ;>Altura (cm):</label>
-            <input type="text" id="altura" name="altura"  placeholder="Ex: 1.80cm">
-            
-            <button type="button" style="margin-top: 5px; 
-            border-radius: 10px; padding: 10px 15px; display: block;" onclick="calcularIMC()">Calcular imc</button>
+            <div class="campo-imc">
+                <label class="titulo" for="altura">Altura (m):</label>
+                <input type="text" id="altura" name="altura" inputmode="decimal" placeholder="Ex.: 1,70">
+            </div>
 
-            <p id="resultado" style="color: black;"></p>
-            
-            <input type="submit" value="Cadastrar Usuário" style="margin-top: 20px; 
-            border-radius: 10px; padding: 10px 15px; display: block;">
+            <button type="button" class="botao-imc" onclick="calcularIMC()">Calcular IMC</button>
+
+            <p id="resultado" class="resultado-imc" aria-live="polite"></p>
+
+            <input type="submit" class="botao-cadastro" value="Cadastrar Usuário">
+            <p id="mensagemCadastro" class="mensagem-cadastro" role="status" aria-live="polite"></p>
         </form>
     </main>
 
